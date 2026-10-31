@@ -49,7 +49,7 @@ function memoryStorage(): Pick<Storage, "getItem" | "setItem" | "removeItem"> {
 }
 
 function invalidateDownstream(
-  state: Pick<WildState, "reduced" | "restatement" | "reducedScope">,
+  _state: Pick<WildState, "reduced" | "restatement" | "reducedScope">,
 ): Pick<WildState, "reduced" | "restatement" | "reducedScope"> {
   return { reduced: null, restatement: null, reducedScope: null };
 }

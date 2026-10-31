@@ -41,7 +41,7 @@ export function WildApp() {
   const restatement = useWild((state) => state.restatement);
   const runs = useWild((state) => state.runs);
   const fileItems = useWild((state) => state.fileItems);
-  const fileHand = useWild((state) => state.fileHand);
+  const _fileHand = useWild((state) => state.fileHand);
   const clearStockpile = useWild((state) => state.clearStockpile);
   const setReduced = useWild((state) => state.setReduced);
   const setRestatement = useWild((state) => state.setRestatement);

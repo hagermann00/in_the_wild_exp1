@@ -1,0 +1,8 @@
+{
+  "name": "What in the Wild",
+  "description": "A geared research skill. Stockpile what is in the wild, bench it against your arsenal, reduce late, imagine last.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

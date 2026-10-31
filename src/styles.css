@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #0a0a0b;
+  --color-panel: #121214;
+  --color-inset: #1a1a1e;
+  --color-ink: #f4f4f5;
+  --color-muted: #a1a1aa;
+  --color-faint: #71717a;
+  --color-line: #2c2c32;
+  --color-steel: #c8ccd4;
+  --color-danger: #e7b1ac;
+  --font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled),
+  [role="radio"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-steel);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: #2a2e33;
+    color: var(--color-ink);
+  }
+}
+
+@keyframes status-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.status-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-faint),
+    var(--color-ink),
+    var(--color-faint)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: status-shimmer 1.6s linear infinite;
+}
+
+.portrait-well {
+  aspect-ratio: 4 / 5;
+}
+
+.plate-photo {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .plate-photo {
+    aspect-ratio: 16 / 9;
+    max-height: 20rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-shimmer {
+    animation: none;
+    color: var(--color-muted);
+    background: none;
+  }
+}
